@@ -1,0 +1,23 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "d3-react-demo",
+  "main": "index.js",
+  "scripts": {
+    "dll": "tdtool dll",
+    "start": "tdtool start"
+  },
+  "author": "can.yang",
+  "license": "ISC",
+  "dependencies": {
+    "d3": "^4.12.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "assets-webpack-plugin": "^3.5.1",
+    "express": "^4.16.2",
+    "tdtool": "^0.1.14",
+    "tdtool-react": "^0.1.4"
+  }
+}
