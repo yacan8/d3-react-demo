@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import BrokenLineChart from './component/brokenLineChart';
-import PieChart, { TwoPieChart } from './component/pieChart';
+import PieChart from './component/pieChart';
 import BarChart from './component/barChart';
 import ForceChart from './component/forceChart';
 import * as d3 from 'd3';
@@ -158,15 +158,15 @@ export default class App extends React.Component {
     }
   }
 
-  componentDidMount() {
-    const promises = data.features.map(feature => renderAssociations(feature));
-    const self = this;
-    Promise.all(promises).then((values) => {
-      self.setState({
-        svg: values.map(v => v.base).join('')
-      })
-    })
-  }
+  // componentDidMount() {
+  //   const promises = data.features.map(feature => renderAssociations(feature));
+  //   const self = this;
+  //   Promise.all(promises).then((values) => {
+  //     self.setState({
+  //       svg: values.map(v => v.base).join('')
+  //     })
+  //   })
+  // }
 
   render() {
     return (<div>
@@ -178,16 +178,13 @@ export default class App extends React.Component {
       <div>
         <PieChart />
       </div>
-      <div>
-        <TwoPieChart />
-      </div>
       <h1>柱状图</h1>
       <div>
         <BarChart />
       </div>
-      <h1>力导图</h1>
+      {/* <h1>力导图</h1>
       <div dangerouslySetInnerHTML={{__html: this.state.svg}}>
-      </div>
+      </div> */}
     </div>);
   }
 }
